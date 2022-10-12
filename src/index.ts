@@ -1,10 +1,10 @@
 /**
  * This program runs alongside Stack.ts
- * in order to add items to and view a stack.
+ * in order to add items to and view a popped stack.
  *
  * By:      Aidan Lalonde-Novales
  * Version: 1.0
- * Since:   2022-10-10
+ * Since:   2022-10-11
  */
 
 import Stack from './Stack'
@@ -14,14 +14,18 @@ import promptSync from 'prompt-sync'
 const prompt = promptSync()
 const myStack = new Stack()
 
-// Input
-const userNum = Number(prompt('Enter a number to add to a stack: '))
-
-// Process
-myStack.push(userNum)
+// Input & Process
+while (true) {
+  let tempNum = Number(prompt('Enter a number to add (-1 to view stack): '))
+  if (tempNum === -1) {
+    break
+  } else {
+    myStack.push(tempNum)
+  }
+}
 
 // Output
 console.log('')
-myStack.showStack()
+myStack.popStack()
 
 console.log('\nDone.')
