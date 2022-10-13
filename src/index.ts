@@ -16,7 +16,7 @@ const myStack = new Stack()
 
 // Input & Process
 while (true) {
-  let tempNum = Number(prompt('Enter a number to add (-1 to view stack): '))
+  const tempNum = Number(prompt('Enter a number to add (-1 to pop): '))
   if (tempNum === -1) {
     break
   } else {
@@ -25,7 +25,9 @@ while (true) {
 }
 
 // Output
-console.log('')
-myStack.popStack()
+console.log('\nOriginal Stack:')
+console.log(myStack.getStack())
+console.log('\nPopped Item:')
+console.log(myStack.popStack())
 
 console.log('\nDone.')

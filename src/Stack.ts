@@ -15,8 +15,8 @@ class Stack {
   }
 
   // push method - inserts a number to the stack
-  push(userNum: number): void {
-    this.stack.push(userNum)
+  push(tempNum: number): void {
+    this.stack.push(tempNum)
   }
 
   // pop method - pops the brackets of the stack
